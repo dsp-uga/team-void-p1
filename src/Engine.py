@@ -68,13 +68,10 @@ def main(sc, X_train_path, y_train_path, X_test_path, y_test_path=None):
     # train_df is a dataframe containing 2 columns, text content and label
     train_raw_rdd = get_train_data_rdd(sc, X_train_path, y_train_path)
     test_raw_rdd = get_test_data_rdd(sc, X_test_path)
-    print(train_raw_rdd.count())
-    print(test_raw_rdd.count())
 
     # feature extraction
     feature_extraction = fe.Feature_Extraction()
-    train_df = feature_extraction.extract_featrues(input_rdd=train_raw_rdd, is_train=True)
-    test_df = feature_extraction.extract_featrues(input_rdd=test_raw_rdd, is_train=False)
+    train_df, test_df = feature_extraction.extract_featrues(train_rdd=train_raw_rdd, test_rdd=test_raw_rdd)
     # print(train_df.show(n=5, truncate=100))
     # print(test_df.show(n=5, truncate=100))
 
