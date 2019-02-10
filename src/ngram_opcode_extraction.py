@@ -209,7 +209,7 @@ if __name__ == "__main__":
     print('***** Generating n-gram opcodes ************************')
     df_opcode_test = spark.createDataFrame(rdd_opcode_list_test).toDF("filename", "opcode")
     # >> ((hash, opcode), count)
-    rdd_opcode_cnt_test = opcode_ngram(df_opcode, NUM_GRAM)
+    rdd_opcode_cnt_test = opcode_ngram(df_opcode_test, NUM_GRAM)
 
     print('***** Creating opcodes list for each document **********')
     # >> (hash, (opcode_index, opcode_cnt))
