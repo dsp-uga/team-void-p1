@@ -8,26 +8,26 @@ from pyspark.ml.linalg import Vectors
 from pyspark.sql.types import DoubleType
 from pyspark.ml.classification import RandomForestClassifier
 from pyspark.ml.feature import IndexToString, StringIndexer, VectorIndexer
-import xgboost as xgb
+# import xgboost as xgb
 
 
-DEBUG = True
-NUM_FEA = 3
+DEBUG = False
+NUM_FEA = 2
 
 if DEBUG:
     FEA1_TRAIN_PATH = '/Users/jerryhui/Desktop/Files/UGA/CS/8360DataPracticum/Projects/p1/team-void-p1/features/segment_train' 
     FEA1_TEST_PATH = '/Users/jerryhui/Desktop/Files/UGA/CS/8360DataPracticum/Projects/p1/team-void-p1/features/segment_test'
-    FEA2_TRAIN_PATH = '/Users/jerryhui/Desktop/Files/UGA/CS/8360DataPracticum/Projects/p1/team-void-p1/features/byte_2gram_train' 
-    FEA2_TEST_PATH = '/Users/jerryhui/Desktop/Files/UGA/CS/8360DataPracticum/Projects/p1/team-void-p1/features/byte_2gram_test'
-    FEA3_TRAIN_PATH = '/Users/jerryhui/Desktop/Files/UGA/CS/8360DataPracticum/Projects/p1/team-void-p1/features/byte_3gram_train' 
-    FEA3_TEST_PATH = '/Users/jerryhui/Desktop/Files/UGA/CS/8360DataPracticum/Projects/p1/team-void-p1/features/byte_3gram_test'
+    FEA2_TRAIN_PATH = '/Users/jerryhui/Desktop/Files/UGA/CS/8360DataPracticum/Projects/p1/team-void-p1/features/bytes_2gram_train' 
+    FEA2_TEST_PATH = '/Users/jerryhui/Desktop/Files/UGA/CS/8360DataPracticum/Projects/p1/team-void-p1/features/bytes_2gram_test'
+    FEA3_TRAIN_PATH = '/Users/jerryhui/Desktop/Files/UGA/CS/8360DataPracticum/Projects/p1/team-void-p1/features/bytes_3gram_train' 
+    FEA3_TEST_PATH = '/Users/jerryhui/Desktop/Files/UGA/CS/8360DataPracticum/Projects/p1/team-void-p1/features/bytes_3gram_test'
 else:
     FEA1_TRAIN_PATH = 'gs://uga-8360-projects/features/segment_train' 
     FEA1_TEST_PATH = 'gs://uga-8360-projects/features/segment_test'
-    FEA2_TRAIN_PATH = 'gs://uga-8360-projects/features/byte_2gram_train' 
-    FEA2_TEST_PATH = 'gs://uga-8360-projects/features/byte_2gram_test'
-    FEA3_TRAIN_PATH = 'gs://uga-8360-projects/features/byte_3gram_train' 
-    FEA3_TEST_PATH = 'gs://uga-8360-projects/features/byte_3gram_test'
+    FEA2_TRAIN_PATH = 'gs://uga-8360-projects/features/bytes_2gram_train' 
+    FEA2_TEST_PATH = 'gs://uga-8360-projects/features/bytes_2gram_test'
+    FEA3_TRAIN_PATH = 'gs://uga-8360-projects/features/bytes_3gram_train' 
+    FEA3_TEST_PATH = 'gs://uga-8360-projects/features/bytes_3gram_test'
 
 
 def _format_(rdd, feature_path):
