@@ -11,9 +11,9 @@ from pyspark.ml.feature import StringIndexer
 from pyspark.ml.classification import RandomForestClassifier
 
 
-DEBUG = False
+DEBUG = True
 NUM_GRAM = 2
-PERCENTAGE = 0.3
+PERCENTAGE = 0.8
 
 def get_specified_index_counts(feature_list, n):
     """
@@ -115,7 +115,7 @@ if __name__ == "__main__":
         file_path = 'gs://uga-dsp/project1/files/'
         asm_path = 'gs://uga-dsp/project1/data/asm/'
         output_path = 'gs://uga-8360-projects/features/'
-        size = '_small'
+        size = ''
 
     # .txt files
     print('***** Reading txt files ********************************')
@@ -207,7 +207,7 @@ if __name__ == "__main__":
     rdd_opcode_list_test = rdd_opcode_detect_test.filter(lambda x: x[1] in opcode_list).groupByKey().map(lambda x: (x[0], list(x[1])))
 
     print('***** Generating n-gram opcodes ************************')
-    df_opcode_test = spark.createDataFrame(rdd_opcode_list_test).toDF("filename", "opcode")
+    df_opcode_test = spark.createDataFrame(rdd_opcode_list_test).toDF("hash", "opcode")
     # >> ((hash, opcode), count)
     rdd_opcode_cnt_test = opcode_ngram(df_opcode_test, NUM_GRAM)
 
