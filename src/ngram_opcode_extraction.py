@@ -11,9 +11,9 @@ from pyspark.ml.feature import StringIndexer
 from pyspark.ml.classification import RandomForestClassifier
 
 
-DEBUG = True
+DEBUG = False
 NUM_GRAM = 2
-PERCENTAGE = 0.8
+PERCENTAGE = 0.3 # Selected opcodes which appear only in $PERCENTAGE of documents
 
 def get_specified_index_counts(feature_list, n):
     """
@@ -189,10 +189,10 @@ if __name__ == "__main__":
     opcode_r, rdd_opcode_distinct_r, N_r = feature_filter(rdd_opcode_imp, rdd_opcode_distinct, rdd_opcode_cnt, rdd_train)
 
 
-    print('***** Transforming RDD into Dateframe ******************')
-    df_opcode_train_r = spark.createDataFrame(opcode_r)
-    print('***** Outputing parquet file ***************************')
-    df_opcode_train_r.write.parquet(output_path + "opcode_" + str(NUM_GRAM) + 'gram' + size + "_train/")
+    # print('***** Transforming RDD into Dateframe ******************')
+    # df_opcode_train_r = spark.createDataFrame(opcode_r)
+    # print('***** Outputing parquet file ***************************')
+    # df_opcode_train_r.write.parquet(output_path + "opcode_" + str(NUM_GRAM) + 'gram' + size + "_train/")
 
 
     # Testing set
