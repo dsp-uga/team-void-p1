@@ -6,32 +6,32 @@
 * Mohammadreza Iman
 
 ## Classifiers: 
-*Naive-Bayes
-*Random Forest
-*Logistic Regression
+* Naive-Bayes
+* Random Forest
+* Logistic Regression
 
 ## Technologies Used:
 * Apache Spark on Google Cloud Platform
-  ** Packages: spark.ml, spark.sql
+  * Packages: spark.ml, spark.sql
 * pySpark 2.3.2
 * Python 3.7.2
 
 ## Overview:
-The project details and explanation is accessible via https://github.com/dsp-uga/sp19/blob/master/projects/p1/project1.pdf.
+The project details and explanation is accessible via [Project1-CSCI8360-UGA](https://github.com/dsp-uga/sp19/blob/master/projects/p1/project1.pdf).
 This repository contains the source codes of different methods that we implement to address the project goal. Briefly, the project goal is to find the best machine learning method for classifying malware files, which should be implemented using Spark platform and could handle a large (Big Data) amount of document as training set and testing set.
 
 ## Dataset:
-The details of the datasets are accessible in the project description document (https://github.com/dsp-uga/sp19/blob/master/projects/p1/project1.pdf). There are 9 classes of malware. The datasets  are accessible via the Google Cloud Bucket:
+The details of the datasets are accessible in the project description document [Project1-CSCI8360-UGA](https://github.com/dsp-uga/sp19/blob/master/projects/p1/project1.pdf). There are 9 classes of malware. The datasets  are accessible via the Google Cloud Bucket:
 Small set:
 	1. Training set. 379 files available both in bytes and asm formats.
-	2. Test set. 169 files available both in bytes and asm formats.
-	3. The list of classes for the training set and testing set.
+	1. Test set. 169 files available both in bytes and asm formats.
+	1. The list of classes for the training set and testing set.
 
 Large set:
 	1. Training set. 8147 files available both in bytes and asm formats.
-	2. Test set. 2721 files available both in bytes and asm formats.
-	3. The list of classes for the training set.
-	* To verify the accuracy of the implemented model, we should submit the predicted list to the leaderboard site for this activity and retrieve  the result.
+	1. Test set. 2721 files available both in bytes and asm formats.
+	1. The list of classes for the training set.
+To verify the accuracy of the implemented model, we should submit the predicted list to the leaderboard site for this activity and retrieve  the result.
 
 ## Project Summary:
 The biggest challenge of this project underlies in the size of datasets (hundreds of gigabytes), which makes the process of feature selection crucial for this project.
@@ -41,11 +41,11 @@ The memory issue for feature extraction due to the size of datasets was so chall
 	- Bi-grams returns 256*256 = 65,536 features
 	- Three-grams means 256^3 = 16,777,216 possible features 
 	- Four-grams rise the number of possible features to 256^4 = 4,294,967,296
-* Such exponential possible number of features shows the reason of memory issues all team faced for this project. Same time it lead us to try to find the best possible competition of selected features.
+Such exponential possible number of features shows the reason of memory issues all team faced for this project. Same time it lead us to try to find the best possible competition of selected features.
 
 
 ## Source codes (/src):
-The codes we are sharing in this repository are listed below with a brief explanation. We tried to add enough comments and directions to each source code to let others be able to run them and adjust them for different platforms and datasets.
+We tried to add enough comments and directions to each source code to let others be able to run them and adjust them for different platforms and datasets. The codes we are sharing in this repository are listed below with a brief explanation:
 	- Engine.py	(The engine code for defining the datasets access, selecting the feature selection method, and running the prediction model)
 	- engine1.py	(The second version of engine code, which supports Random Forest)
 	- Feature_Extraction.py	(The implementation of feature selection)
@@ -72,5 +72,5 @@ The codes we are sharing in this repository are listed below with a brief explan
 		- only segment									0.912
 		- only bigrams with spark RF featureImportance	0.965
 		- only 3-grams with spark RF featureImportance 	0.945
-		- bytes & bigrams with segment count			0.989 (The best one)
+		- bytes & bigrams with segment count			**0.989**
 		- bytes & 3-grams with segment count			0.981
