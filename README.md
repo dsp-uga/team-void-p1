@@ -52,16 +52,16 @@ Such exponential possible number of features shows the reason of memory issues a
 ## Source codes (/src):
 We tried to add enough comments and directions to each source code to let others be able to run them and adjust them for different platforms and datasets. The codes we are sharing in this repository are listed below with a brief explanation:
 
-	- Engine.py	(The engine code for defining the datasets access, selecting the feature selection method, and running the prediction model)
-	- engine1.py	(The second version of engine code, which supports Random Forest)
-	- Feature_Extraction.py	(The implementation of feature selection)
-	- naive_bayes.py	(The implementation of the naive bayes classifier)
-	- ngram_bytes_extraction.py	(The implementation of the n-gram(s) word extractor)
-	- ngram_opcode_extraction.py	(The implementation of the n-gram(s) word extractor with opcode method)
-	- segment_extraction.py	(The implementation of the segment features extractor)
-	- NaiveBayes_TF-IDF_small-sets_No-API.py	(A tailored implementation of TF_IDF and naive bayes for this type of datasets, with no use of available ML libraries)
-	- NaiveBayes_small-sets_No-API.py	(A tailored implementation of TF and naive bayes for this type of datasets, with no use of available ML libraries)
-	- NaiveBayes_small-sets_No-API_xportion_lines.py	(A tailored implementation of partial TF and naive bayes for this type of datasets, with no use of available ML libraries)
+	- Engine.py (The engine code for defining the datasets access, selecting the feature selection method, and running the prediction model)
+	- engine1.py (The second version of engine code, which supports Random Forest)
+	- Feature_Extraction.py (The implementation of feature selection)
+	- naive_bayes.py (The implementation of the naive bayes classifier)
+	- ngram_bytes_extraction.py (The implementation of the n-gram(s) word extractor)
+	- ngram_opcode_extraction.py (The implementation of the n-gram(s) word extractor with opcode method)
+	- segment_extraction.py (The implementation of the segment features extractor)
+	- NaiveBayes_TF-IDF_small-sets_No-API.py (A tailored implementation of TF_IDF and naive bayes for this type of datasets, with no use of available ML libraries)
+	- NaiveBayes_small-sets_No-API.py (A tailored implementation of TF and naive bayes for this type of datasets, with no use of available ML libraries)
+	- NaiveBayes_small-sets_No-API_xportion_lines.py (A tailored implementation of partial TF and naive bayes for this type of datasets, with no use of available ML libraries)
 
 ## Some of the accuracy results:
 * Small datasets:

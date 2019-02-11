@@ -1,0 +1,12 @@
+Project 1 CSCI-8360 : Malware Classification
+Team: team-void-p1
+
+Members: 
+	- Jiahao Xu
+	- Yang Shi
+	- Mohammadreza Iman
+	
+Contribution:
+We all participated in setting up the GitHub repository, implementation environment, deciding about the methods and APIs, etc. through several meetings we made for this project.
+Then each one of us focused more on different tasks while we tried to keep each other updated using GitHub tickets and Slack for communication as well as meetings.
+Jiahao Xu focused on using APIs and implemented the code which achieved the best results. Yang Shi was the researcher and debugger, who found the best set of APIs, debugged and test our codes, and optimized our implementations. Mohammadreza Iman focused on implementing the tailored codes for this specific project without using APIs, also helped on documentation.
