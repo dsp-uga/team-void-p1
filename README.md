@@ -25,13 +25,13 @@ This repository contains the source codes of different methods that we implement
 The details of the datasets are accessible in the project description document, [Project1-CSCI8360-UGA](https://github.com/dsp-uga/sp19/blob/master/projects/p1/project1.pdf). There are 9 classes of malware. The datasets  are accessible via the Google Cloud Bucket:
 ### Small set:
 	1. Training set. 379 files available both in bytes and asm formats.
-	1. Test set. 169 files available both in bytes and asm formats.
-	1. The list of classes for the training set and testing set.
+	2. Test set. 169 files available both in bytes and asm formats.
+	3. The list of classes for the training set and testing set.
 
 ### Large set:
 	1. Training set. 8147 files available both in bytes and asm formats.
-	1. Test set. 2721 files available both in bytes and asm formats.
-	1. The list of classes for the training set.
+	2. Test set. 2721 files available both in bytes and asm formats.
+	3. The list of classes for the training set.
 To verify the accuracy of the implemented model, we should submit the predicted list to the leaderboard site for this activity and retrieve  the result.
 
 ## Project Summary:
