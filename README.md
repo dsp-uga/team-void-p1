@@ -46,7 +46,17 @@ The memory issue for feature extraction due to the size of datasets was so chall
 	- Three-grams means 256^3 = 16,777,216 possible features 
 	- Four-grams rise the number of possible features to 256^4 = 4,294,967,296
 
-Such exponential possible number of features shows the reason of memory issues all team faced for this project. Same time it lead us to try to find the best possible competition of selected features.
+Such exponential possible number of features shows the reason of memory issues all team faced for this project. Same time it leads us to try to find the best possible competition of selected features.
+
+### Features
+1. **Unigram line of bytes (from bytes files)**
+    Each line at the bytes file (ignore the address, which is the first hexadecimal token), which is a restricted 16-grams bytes
+2. **Bigram/3gram bytes (from bytes files)**
+    Selected the important features by random forest classifier
+3. **Segment, e.g. 'data', 'idata', 'rdata' ... (from asm files)** 
+    The first word in each line.
+4. **Bigrams opcodes, e.g. 'push', 'add', 'mov' (from asm files)** 
+    Selected the important features by random forest classifier
 
 
 ## Source codes (/src):
