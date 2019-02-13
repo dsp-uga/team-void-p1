@@ -64,6 +64,7 @@ We tried to add enough comments and directions to each source code to let others
 
 	- Engine.py (The engine code for defining the datasets access, selecting the feature selection method, and running the prediction model)
 	- engine1.py (The second version of engine code, which supports Random Forest)
+	- engine_xgboost.py (The version of using xgboost as classifier)
 	- Feature_Extraction.py (The implementation of feature selection)
 	- naive_bayes.py (The implementation of the naive bayes classifier)
 	- ngram_bytes_extraction.py (The implementation of the n-gram(s) word extractor)
@@ -90,3 +91,5 @@ We tried to add enough comments and directions to each source code to let others
 		- only 3-grams with spark RF featureImportance 	0.945
 		- bytes & bigrams with segment count			**0.989**
 		- bytes & 3-grams with segment count			0.981
+	- XGboost (beta ver.)
+		- bytes & bigrams with segment count			0.120 
